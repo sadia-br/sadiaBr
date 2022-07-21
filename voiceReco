@@ -86,3 +86,25 @@ Textbox.on('input', function() {
 })
 
 Task2
+1-the first thing is to install the latest version of the Arduino IDE (Arduino 1.8.5 or higher)
+2-Next, you need to download the contents of the espit-arduino GitHub repository. You can visit GitHub and download it manually
+3-Now go to Sketchbook in your Arduino environment. It's the Arduino directory by default in "Documents" unless it's changed. You can check this by opening the Arduino
+IDE > File > Preferences > Sketchbook Location.
+4-Now looking at the sketchbook located in My Documents > Arduino, open the guide. You should see a directory of libraries inside.
+5-Now create a new directory called hardware . Inside it create another directory called espressif . Inside it create another directory called esp32 .
+
+The directory structure should look like My Documents > Arduino > hardware > espressif > esp32
+6-Now extract the ESP32 that was previously downloaded into the esp32 directory.
+7-Once done, check for boards.txt, platform.txt, folders, documents, tools, etc. Inside the esp32 folder.
+
+In order to compile ESP32 code, you need the Xtensa GNU compiler (GCC) suite installed on your machine. Go to esp32 > tools folder and execute get.exe
+8-This executable will download the Xtensa GNU Tools and ESP32 SDK, and then unzip it to the appropriate location.
+9-You should see some new folders in the Tools directory, including "sdk" and "xtensa-esp32-elf" once you're done.
+10-To make sure your ESP32 Arduino and ESP32 development board are set up correctly, we are going to upload the simplest code ever - The Blink!
+
+We will use LED for this test. As mentioned earlier in this project, the board's D2 pin is connected to the onboard blue LED and can be user programmed. perfect !
+
+Before we can upload the code and run with the LED, we need to make sure the board is correctly identified in the Arduino IDE. Open the Arduino IDE and select the ESP32 Dev Module option under Arduino IDE > Tools > Board menu.
+11-Now, connect the ESP32 development board to the computer via micro-B USB cable. Once the board is connected, the communication or COM port must be set. On Windows machines, this will be like COM#, select this serial port under Arduino IDE > Tools > Port menu.
+
+The download speed is also set to 921600 by default. Try lowering it to upload speed: 115200 Many users complained about getting espcomm_sync failed error when trying to load the schema at speed 921600
